@@ -1,0 +1,55 @@
+set hidden true
+set ignorecase true
+set icons true
+set ifs "\n"
+set number on
+# set dirpreviews on
+set relativenumber on
+set drawbox on
+set ratios '3:1'
+set info size:time
+
+set previewer ~/.config/lf/pv.sh
+
+
+# KEYMAPS
+# use enter for shell commands
+map <enter> shell
+map R reload
+map . set hidden!
+map p paste
+map y copy
+map C clear
+map DDD del
+map <c-o> subl
+map <c-l> ${{less $f}}
+
+map gh cd ~
+map gm cd /mnt
+map gb cd /mnt/e/Store/books/programming
+map gp cd /home/febert/programming
+map gc cd /home/febert/.config/lf/
+map gu cd "/mnt/c/Users/Fehérvári Norbert/"
+map o open
+map O myvim
+map ss set sortby size
+map st set sortby time
+map sn set sortby name
+map e ${{explorer.exe .}}
+
+
+# FUNCTIONS e.q. :mkdir dir
+cmd mkdir ${{ mkdir $1}}
+cmd helloworld echo "hello world baby"
+cmd subl ${{  subl.exe .}}
+
+cmd open ${{
+	p=$(wslpath -w "$f")
+	explorer.exe $p
+}}
+cmd myvim ${{nvim $f}}
+
+cmd del ${{ rm -rf $f}}
+
+
+

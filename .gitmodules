@@ -1,0 +1,6 @@
+[submodule "nvim"]
+	path = nvim
+	url = https://github.com/fberti/neovim-setup.git
+[submodule "nvchad"]
+	path = nvchad
+	url = https://github.com/fberti/NvChad.git
